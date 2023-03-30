@@ -1,0 +1,53 @@
+body {
+  background-color: #fef9ef;
+  color: #fef9ef;
+}
+
+nav {
+  background-color: #fee440;
+}
+
+#brand {
+  font-family: "Delicious Handrawn", cursive;
+  color: #fef9ef;
+  font-size: 30px;
+}
+
+#koordinat {
+  background-color: #ff865e;
+}
+
+.card-body,
+#head {
+  background-color: #fee440;
+}
+
+.card-img-top,
+.list-group-item {
+  background-color: #ff865e;
+  color: #ffffff;
+}
+
+main,
+footer,
+.clock {
+  font-family: "Ubuntu", sans-serif;
+}
+
+#judulCuaca,
+.clock {
+  color: #ffffff;
+}
+
+footer,
+#judulCuaca {
+  color: #ff865e;
+}
+
+.card-header {
+  background-color: #3d3c42;
+}
+
+#cuaca {
+  color: #ffffff;
+}
