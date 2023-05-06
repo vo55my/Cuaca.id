@@ -1,7 +1,7 @@
 import "./component/list-bar.js";
 import "./component/footer-bar.js";
 import "./component/app-bar.js";
-import "./style/style.css";
+import "./style/style.scss";
 import $ from "jquery";
 import moment from "moment";
 
