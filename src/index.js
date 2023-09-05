@@ -2,6 +2,7 @@ import "./component/list-bar.js";
 import "./component/footer-bar.js";
 import "./component/app-bar.js";
 import "./style/style.scss";
+import "./style/loading.scss"
 import $ from "jquery";
 import moment from "moment";
 
@@ -22,7 +23,16 @@ updateTime();
 let lat = -6.3730914;
 let lon = 106.7116703;
 
+const showLoading = () => {
+  $("#loading").css("display", "block");
+};
+
+const hideLoading = () => {
+  $("#loading").css("display", "none");
+};
+
 const getWilayah = () => {
+  showLoading();
   fetch(`https://ibnux.github.io/BMKG-importer/cuaca/wilayah.json`)
     .then((response) => response.json())
     .then((data) => {
@@ -59,10 +69,12 @@ const getWilayah = () => {
         `<i class="bi bi-geo-alt-fill"></i> ${data[0].propinsi}, ${data[0].kota}, ${data[0].kecamatan}`
       );
       getCuaca(data[0].id);
+      hideLoading();
     });
 };
 
 const getCuaca = (idWilayah) => {
+  showLoading();
   fetch(`https://ibnux.github.io/BMKG-importer/cuaca/${idWilayah}.json`)
     .then((response) => response.json())
     .then((data) => {
@@ -85,6 +97,7 @@ const getCuaca = (idWilayah) => {
         if (n > 4) break;
       }
       $("#cuaca").html(items.join(""));
+      hideLoading();
     });
 };
 
